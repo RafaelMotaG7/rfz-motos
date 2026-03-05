@@ -21,6 +21,7 @@ html, body{
 }
 
 header {
+    background-color: var(--preto);
     color: var(--branco);
     display: flex;
     justify-content: space-between;
