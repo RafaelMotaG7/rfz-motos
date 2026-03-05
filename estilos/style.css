@@ -1,0 +1,105 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+
+:root{
+    --vermelho: #F20505;
+    --vermelho-claro: #F26363;
+    --cinza: #D9D9D9;
+    --branco: #F2F2F2;
+    --preto: #0D0D0D;
+}
+
+*{
+    margin: 0;
+}
+
+html, body{
+    background-color: var(--preto);
+    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    color: var(--branco);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.icons {
+    display: flex;
+    gap: 15px;
+}
+
+.icons i {
+    cursor: pointer;
+}
+
+section img{
+    width: 100%;
+    max-height: 550px;
+}
+
+section > p{
+    color: var(--branco);
+    font-size: 2.8em;
+    font-family: "Fjalla One", sans-serif;
+    margin-top: -170px;
+    margin-left: 10px;
+}
+
+section > button{
+    margin-left: 10px;
+    border: none;
+    color: var(--branco);
+    cursor: pointer;
+    border-radius: 12px;
+    background-color: var(--vermelho);
+    padding: 12px;
+    transition: .7s;
+    transform: translateY(3px);
+}
+
+section > button:hover{
+    background-color: var(--vermelho-claro);
+    transform: translateY(0px);
+}
+
+article > h2{
+    margin-top: 50px;
+    color: var(--branco);
+    margin-left: 10px;
+}
+
+.motos{
+    overflow: hidden;
+}
+
+.motos > img{
+    padding: 10px;
+    margin-top: 35px;
+    margin-left: 10px;
+    width: 30%;
+    border-radius: 25px;
+}
+
+.motos > p{
+    color: var(--cinza);
+    font-size: 1.4em;
+    margin-left: 10px;
+}
+
+.motos > p > strong{
+    color: var(--vermelho-claro);
+}
+
+hr{
+    border: 1px solid white;
+    margin-top: 40px;
+}
