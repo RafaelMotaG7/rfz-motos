@@ -3,45 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RFZ</title>
-    <link rel="stylesheet" href="estilos/style.css" media="all">
+    <title>RFZ | Acelerando seu destino</title>
+    
+    <!-- Fontes e Ícones -->
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="estilos/style.css">
     <link rel="stylesheet" href="estilos/media.css">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"> <!-- Link para os icones do google -->
     <link rel="shortcut icon" href="images/android-chrome-192x192.png" type="image/x-icon">
 </head>
 <body>
-    <header>
-        <h1>RFZ</h1>
+    <header id="header">
+        <div class="logo">
+            <h1>RFZ</h1>
+        </div>
+        
+        <nav id="nav-menu" class="nav-menu">
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#novidades">Novidades</a></li>
+                <li><a href="#populares">Populares</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+
         <div class="icons">
-            <i class="material-symbols-outlined">menu</i>
-            <i class="material-symbols-outlined">search</i>
-            <i class="material-symbols-outlined">account_circle</i>
+            <button aria-label="Pesquisar" class="icon-btn"><i class="material-symbols-outlined">search</i></button>
+            <button aria-label="Conta do Usuário" class="icon-btn"><i class="material-symbols-outlined">account_circle</i></button>
+            <button aria-label="Menu" class="icon-btn menu-toggle" id="btn-menu"><i class="material-symbols-outlined">menu</i></button>
         </div>
     </header>
+
     <main>
-        <section>
-            <picture>
+        <!-- Seção Principal (Hero) -->
+        <section class="hero">
+            <picture class="hero-bg">
                 <source media="(min-width: 1000px)" srcset="images/moto-preta-vermelha-pexels-deitada.jpg" type="image/jpeg">
-                <img src="images/moto-preta-vermelha-pexels.jpg" alt="Uma pessoa dirigindo uma moto em uma curva, a moto é predominantemente preta com detalhes vermelha">
+                <img src="images/moto-preta-vermelha-pexels.jpg" alt="Pessoa dirigindo moto esportiva preta e vermelha em uma curva">
             </picture>
-            <p>RFZ Motos<br>Acelerando seu destino</p>
-            <button>Veja as novidades</button>
+            <div class="hero-overlay"></div>
+            
+            <div class="hero-content fade-in">
+                <h2>RFZ Motos</h2>
+                <p>Acelerando seu destino com a máxima performance e estilo.</p>
+                <button class="btn-primary" onclick="document.getElementById('novidades').scrollIntoView({behavior: 'smooth'})">
+                    Veja as novidades
+                </button>
+            </div>
         </section>
-        <article>
-            <h2>Moto mais vendida</h2>
-            <div class="motos">
-                <img src="images/Moto-azul-pexels.jpg" alt="Moto azul BMW S1000 RR">
-                <p>BMW S1000 RR</p>
-                <p><strong>R$139.900,00</strong></p>
-                <hr>
+
+        <!-- Seção de Produtos -->
+        <section id="novidades" class="showroom container fade-in">
+            <div class="section-header">
+                <h2>Moto Mais Vendida</h2>
+                <hr class="linha-destaque">
             </div>
-            <h2>Categoria Popular</h2>
-            <div class="motos">
-                <img src="images/moto-preta-pexels.jpg" alt="">
-                <p>BMW S1000 RR</p>
-                <p><strong>R$139.900,00</strong></p>
+
+            <div class="cards-grid">
+                <!-- Card 1 -->
+                <article class="card">
+                    <div class="card-img-wrapper">
+                        <img src="images/Moto-azul-pexels.jpg" alt="Moto azul BMW S1000 RR">
+                        <span class="badge">Mais Vendida</span>
+                    </div>
+                    <div class="card-info">
+                        <h3>BMW S1000 RR</h3>
+                        <p class="price">R$ 139.900,00</p>
+                        <button class="btn-secondary">Ver Detalhes</button>
+                    </div>
+                </article>
             </div>
-        </article>
+        </section>
+
+        <section id="populares" class="showroom container fade-in">
+            <div class="section-header">
+                <h2>Categoria Popular</h2>
+                <hr class="linha-destaque">
+            </div>
+
+            <div class="cards-grid">
+                <!-- Card 2 -->
+                <article class="card">
+                    <div class="card-img-wrapper">
+                        <img src="images/moto-preta-pexels.jpg" alt="Moto esportiva preta">
+                    </div>
+                    <div class="card-info">
+                        <h3>Honda CBR 1000RR</h3>
+                        <p class="price">R$ 98.500,00</p>
+                        <button class="btn-secondary">Ver Detalhes</button>
+                    </div>
+                </article>
+                
+                <!-- Adicione mais cards aqui seguindo a mesma estrutura acima -->
+            </div>
+        </section>
     </main>
+
+    <footer>
+        <p>&copy; 2024 RFZ Motos. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Script -->
+    <script src="js/script.js"></script>
 </body>
 </html>
