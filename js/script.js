@@ -9,47 +9,42 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// 2. Lógica do Menu Mobile (Hamburguer)
+// 2. Lógica do Menu Mobile (Hamburguer / Fechar)
 const btnMenu = document.getElementById('btn-menu');
 const navMenu = document.getElementById('nav-menu');
+const menuIcon = btnMenu.querySelector('.material-symbols-outlined');
 
 btnMenu.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
+    const isOpen = navMenu.classList.toggle('active');
     
-    // Troca o ícone de menu para um 'X' quando aberto
-    const icon = btnMenu.querySelector('i');
-    if(navMenu.classList.contains('active')) {
-        icon.textContent = 'close';
-    } else {
-        icon.textContent = 'menu';
-    }
+    // Troca dinamicamente o ícone do botão entre o menu hambúrguer e o X
+    menuIcon.textContent = isOpen ? 'close' : 'menu';
 });
 
-// Fecha o menu ao clicar em um link (versão mobile)
+// Fecha o menu ao clicar em qualquer opção da navegação
 const navLinks = document.querySelectorAll('.nav-menu a');
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
         navMenu.classList.remove('active');
-        btnMenu.querySelector('i').textContent = 'menu';
+        menuIcon.textContent = 'menu';
     });
 });
 
-// 3. Efeito de surgimento suave (Fade In) ao rolar a tela usando Intersection Observer
+// 3. Efeito de surgimento suave (Fade In) ao rolar a tela
 const observerOptions = {
     root: null,
     rootMargin: '0px',
-    threshold: 0.15 // Dispara quando 15% do elemento estiver visível
+    threshold: 0.10
 };
 
 const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            observer.unobserve(entry.target); // Para de observar depois de animar 1 vez
+            observer.unobserve(entry.target);
         }
     });
 }, observerOptions);
 
-// Pega todos os elementos que têm a classe 'fade-in' e começa a observar
 const fadeElements = document.querySelectorAll('.fade-in');
 fadeElements.forEach(el => observer.observe(el));

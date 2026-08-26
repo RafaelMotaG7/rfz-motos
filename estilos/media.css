@@ -16,6 +16,8 @@
 @media (max-width: 768px) {
     .menu-toggle {
         display: block; /* Mostra o botão de sanduíche */
+        position: relative;
+        z-index: 1001; /* Garante que o ícone fique sobre o menu aberto */
     }
 
     /* Menu lateral para mobile */
