@@ -309,7 +309,7 @@ footer {
 /* --- EFEITO PARALLAX 2 (Sinta a Adrenalina) --- */
 .parallax-section {
     /* Certifique-se de ter uma imagem neste caminho ou mude a URL */
-    background-image: url('../images/moto-parallax-bg.jpg'); 
+    background-image: url('../images/moto-preta-vermelha-pexels-deitada.jpg'); 
     min-height: 400px;
     background-attachment: fixed; /* É isso que cria o efeito parallax */
     background-position: center;

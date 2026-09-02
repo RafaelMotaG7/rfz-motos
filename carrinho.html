@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras | RFZ Motos</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    
+    <link rel="stylesheet" href="estilos/style.css">
+    <link rel="stylesheet" href="estilos/media.css">
+</head>
+<body style="padding-top: 100px;"> <!-- Espaço do header fixo -->
+
+    <!-- CABEÇALHO (O mesmo das outras páginas) -->
+    <header id="header" class="scrolled">
+        <div class="logo">
+            <h1>RFZ</h1>
+        </div>
+        <nav id="nav-menu" class="nav-menu">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="index.html#novidades">Novidades</a></li>
+                <li><a href="index.html#populares">Populares</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+        <div class="icons">
+            <button class="icon-btn"><i class="material-symbols-outlined">search</i></button>
+            <button class="icon-btn"><i class="material-symbols-outlined">account_circle</i></button>
+            <button class="icon-btn menu-toggle" id="btn-menu"><i class="material-symbols-outlined">menu</i></button>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="section-header">
+            <h2>Seu Carrinho</h2>
+            <hr class="linha-destaque">
+        </div>
+
+        <div class="carrinho-grid">
+            <!-- Lista de Produtos no Carrinho -->
+            <div class="carrinho-itens">
+                
+                <!-- Item 1 -->
+                <div class="item-carrinho">
+                    <img src="images/Moto-azul-pexels.jpg" alt="BMW S1000 RR">
+                    <div class="item-info">
+                        <h3>BMW S1000 RR</h3>
+                        <p class="item-categoria">Esportiva</p>
+                        <button class="btn-remover"><i class="material-symbols-outlined">delete</i> Remover</button>
+                    </div>
+                    <div class="item-qtd">
+                        <button class="btn-qtd minus">-</button>
+                        <input type="number" value="1" min="1" readonly>
+                        <button class="btn-qtd plus">+</button>
+                    </div>
+                    <div class="item-preco">
+                        <p>R$ 139.900,00</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Resumo do Pedido -->
+            <aside class="resumo-pedido">
+                <h3>Resumo do Pedido</h3>
+                <div class="resumo-linha">
+                    <span>Subtotal</span>
+                    <span>R$ 139.900,00</span>
+                </div>
+                <div class="resumo-linha">
+                    <span>Frete</span>
+                    <span>R$ 150,00</span>
+                </div>
+                <hr style="border-color: #333; margin: 15px 0;">
+                <div class="resumo-linha total">
+                    <span>Total</span>
+                    <span>R$ 140.050,00</span>
+                </div>
+                
+                <button class="btn-primary" style="width: 100%; margin-top: 20px;">Finalizar Compra</button>
+                <a href="index.html" class="btn-secondary" style="display: block; text-align: center; text-decoration: none; padding: 15px;">Continuar Comprando</a>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 RFZ Motos. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
