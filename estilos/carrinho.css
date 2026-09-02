@@ -1,0 +1,185 @@
+/* --- ÍCONE DO CARRINHO E NOTIFICAÇÃO --- */
+.icons a.icon-btn {
+    text-decoration: none;
+    position: relative;
+}
+
+/* Badge indicando quantidade de itens no ícone do cabeçalho */
+.cart-count-badge {
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    background-color: var(--vermelho);
+    color: var(--branco);
+    font-size: 0.7rem;
+    font-weight: bold;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--preto-fundo);
+}
+
+/* --- PÁGINA DO CARRINHO (ESTILO COMPLETO) --- */
+.cart-section {
+    padding-top: 120px; /* Espaço para o header fixo */
+    min-height: 80vh;
+}
+
+.cart-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+/* Tabela de Itens do Carrinho */
+.cart-table-container {
+    background-color: var(--preto-card);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #262626;
+    overflow-x: auto;
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.cart-table th {
+    font-family: var(--font-titulo);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--cinza);
+    padding-bottom: 15px;
+    border-bottom: 1px solid #333;
+}
+
+.cart-table td {
+    padding: 20px 0;
+    border-bottom: 1px solid #222;
+    vertical-align: middle;
+}
+
+/* Item dentro da tabela */
+.cart-item-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.cart-item-info img {
+    width: 90px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #333;
+}
+
+.cart-item-details h4 {
+    font-family: var(--font-titulo);
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+
+.cart-item-details p {
+    font-size: 0.85rem;
+    color: var(--cinza);
+}
+
+/* Controle de Quantidade */
+.qty-selector {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid #333;
+    border-radius: 4px;
+    background-color: #111;
+}
+
+.qty-btn {
+    background: none;
+    border: none;
+    color: var(--branco);
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: color 0.2s;
+}
+
+.qty-btn:hover {
+    color: var(--vermelho);
+}
+
+.qty-input {
+    width: 35px;
+    text-align: center;
+    background: none;
+    border: none;
+    color: var(--branco);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Botão de Remover Item */
+.remove-btn {
+    background: none;
+    border: none;
+    color: var(--cinza);
+    cursor: pointer;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.remove-btn:hover {
+    color: var(--vermelho);
+    transform: scale(1.15);
+}
+
+/* Resumo do Pedido (Caixa Lateral) */
+.cart-summary {
+    background-color: var(--preto-card);
+    border-radius: 12px;
+    padding: 25px;
+    border: 1px solid #262626;
+    height: fit-content;
+}
+
+.cart-summary h3 {
+    font-family: var(--font-titulo);
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    color: var(--cinza);
+    font-size: 0.95rem;
+}
+
+.summary-row.total {
+    border-top: 1px solid #333;
+    padding-top: 15px;
+    color: var(--branco);
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.summary-row.total span:last-child {
+    color: var(--vermelho);
+    font-size: 1.4rem;
+}
+
+/* Responsividade do Carrinho */
+@media (max-width: 900px) {
+    .cart-grid {
+        grid-template-columns: 1fr; /* Empilha a lista de itens e o resumo */
+    }
+}
