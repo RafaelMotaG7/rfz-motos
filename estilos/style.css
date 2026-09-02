@@ -102,7 +102,7 @@ header.scrolled {
     display: none; /* Escondido no desktop, mostrado no mobile */
 }
 
-/* --- HERO SECTION (Principal) --- */
+/* --- HERO SECTION (Principal com Parallax) --- */
 .hero {
     position: relative;
     height: 100vh;
@@ -111,14 +111,27 @@ header.scrolled {
     padding: 0 5%;
 }
 
-.hero-bg, .hero-bg img {
+.hero-bg {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Faz a imagem cobrir o espaço sem distorcer */
     z-index: -2;
+    /* Imagem mobile padrão */
+    background-image: url('../images/moto-preta-vermelha-pexels.jpg');
+    /* Efeito Parallax */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Troca para a imagem deitada em telas maiores */
+@media (min-width: 1000px) {
+    .hero-bg {
+        background-image: url('../images/moto-preta-vermelha-pexels-deitada.jpg');
+    }
 }
 
 .hero-overlay {
@@ -293,8 +306,10 @@ footer {
     transform: translateY(0);
 }
 
-/* --- EFEITO PARALLAX --- */
+/* --- EFEITO PARALLAX 2 (Sinta a Adrenalina) --- */
 .parallax-section {
+    /* Certifique-se de ter uma imagem neste caminho ou mude a URL */
+    background-image: url('../images/moto-parallax-bg.jpg'); 
     min-height: 400px;
     background-attachment: fixed; /* É isso que cria o efeito parallax */
     background-position: center;
