@@ -292,3 +292,113 @@ footer {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* --- EFEITO PARALLAX --- */
+.parallax-section {
+    background-image: url('../images/moto-parallax-bg.jpg'); /* Adicione uma imagem bonita aqui */
+    min-height: 400px;
+    background-attachment: fixed; /* É isso que cria o efeito parallax */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 50px 0;
+}
+
+.parallax-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.parallax-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.parallax-content h2 {
+    font-family: var(--font-titulo);
+    font-size: 3rem;
+    color: var(--branco);
+    text-transform: uppercase;
+}
+
+/* --- PÁGINA DE PRODUTO --- */
+.produto-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-top: 40px;
+}
+
+.produto-imagem img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.produto-detalhes h1 {
+    font-family: var(--font-titulo);
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.produto-detalhes .descricao {
+    color: var(--cinza);
+    line-height: 1.6;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+/* Calculadora de CEP */
+.cep-container {
+    background-color: var(--preto-card);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border: 1px solid #333;
+}
+
+.cep-input-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.cep-input-group input {
+    flex: 1;
+    padding: 12px;
+    background-color: #111;
+    border: 1px solid #333;
+    color: var(--branco);
+    border-radius: 4px;
+    font-family: var(--font-texto);
+}
+
+.resultado-cep {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #4caf50; /* Verde para indicar sucesso */
+}
+
+/* Botão Comprar */
+.btn-comprar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    padding: 20px;
+}
+
+/* Responsividade Produto */
+@media (max-width: 768px) {
+    .produto-grid {
+        grid-template-columns: 1fr; /* Empilha a imagem em cima e detalhes embaixo */
+    }
+}

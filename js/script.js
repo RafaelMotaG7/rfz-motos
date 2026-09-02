@@ -1,50 +1,66 @@
-// 1. Mudar o visual do Header ao rolar a página
-const header = document.getElementById('header');
+// --- LÓGICA DA PÁGINA DE PRODUTO ---
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
-});
-
-// 2. Lógica do Menu Mobile (Hamburguer / Fechar)
-const btnMenu = document.getElementById('btn-menu');
-const navMenu = document.getElementById('nav-menu');
-const menuIcon = btnMenu.querySelector('.material-symbols-outlined');
-
-btnMenu.addEventListener('click', () => {
-    const isOpen = navMenu.classList.toggle('active');
-    
-    // Troca dinamicamente o ícone do botão entre o menu hambúrguer e o X
-    menuIcon.textContent = isOpen ? 'close' : 'menu';
-});
-
-// Fecha o menu ao clicar em qualquer opção da navegação
-const navLinks = document.querySelectorAll('.nav-menu a');
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        menuIcon.textContent = 'menu';
+// 1. Formatar o CEP automaticamente (Colocar o traço)
+const inputCep = document.getElementById('cep');
+if (inputCep) {
+    inputCep.addEventListener('input', function(e) {
+        let value = e.target.value.replace(/\D/g, ''); // Remove tudo que não é número
+        if (value.length > 5) {
+            value = value.substring(0, 5) + '-' + value.substring(5, 8);
+        }
+        e.target.value = value;
     });
-});
+}
 
-// 3. Efeito de surgimento suave (Fade In) ao rolar a tela
-const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.10
-};
+// 2. Simular Cálculo de Frete
+const btnCalcularCep = document.getElementById('btn-calcular-cep');
+const resultadoCep = document.getElementById('resultado-cep');
 
-const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
+if (btnCalcularCep) {
+    btnCalcularCep.addEventListener('click', () => {
+        const cepValue = inputCep.value;
+        
+        if (cepValue.length === 9) {
+            // Simulando uma requisição de API com setTimeout
+            resultadoCep.style.color = 'var(--cinza)';
+            resultadoCep.textContent = 'Calculando...';
+            
+            setTimeout(() => {
+                // Resultados falsos para dar o efeito visual
+                const valorFrete = (Math.random() * 150 + 50).toFixed(2).replace('.', ',');
+                const dias = Math.floor(Math.random() * 10) + 3;
+                
+                resultadoCep.style.color = '#4caf50'; // Verde
+                resultadoCep.innerHTML = `<strong>Transportadora RFZ:</strong> R$ ${valorFrete} <br> Prazo estimado: ${dias} dias úteis.`;
+            }, 800);
+        } else {
+            resultadoCep.style.color = 'var(--vermelho)';
+            resultadoCep.textContent = 'Por favor, insira um CEP válido.';
         }
     });
-}, observerOptions);
+}
 
-const fadeElements = document.querySelectorAll('.fade-in');
-fadeElements.forEach(el => observer.observe(el));
+// 3. Adicionar ao Carrinho (Animação / Feedback)
+const btnAddCarrinho = document.getElementById('btn-add-carrinho');
+
+if (btnAddCarrinho) {
+    btnAddCarrinho.addEventListener('click', function() {
+        const icone = this.querySelector('i');
+        const textoOriginal = this.innerHTML;
+        
+        // Altera o estado do botão para dar feedback ao usuário
+        this.style.backgroundColor = '#4caf50'; // Fica verde
+        this.innerHTML = '<i class="material-symbols-outlined">check_circle</i> Adicionado!';
+        
+        // Aqui você adicionaria a lógica para salvar no localStorage
+        // let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+        // carrinho.push({ id: 1, nome: 'BMW S1000 RR', preco: 139900.00 });
+        // localStorage.setItem('carrinho', JSON.stringify(carrinho));
+
+        // Retorna ao estado normal após 2.5 segundos
+        setTimeout(() => {
+            this.style.backgroundColor = 'var(--vermelho)';
+            this.innerHTML = textoOriginal;
+        }, 2500);
+    });
+}

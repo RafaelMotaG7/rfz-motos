@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMW S1000 RR | RFZ Motos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="estilos/style.css">
+    <link rel="stylesheet" href="estilos/media.css">
+</head>
+<body style="padding-top: 100px;"> <main class="container">
+        <div class="produto-grid">
+            <div class="produto-imagem">
+                <img src="images/Moto-azul-pexels.jpg" alt="BMW S1000 RR Azul" id="imagem-principal">
+            </div>
+
+            <div class="produto-detalhes">
+                <span class="badge" style="position: relative; top: 0; left: 0; display: inline-block; margin-bottom: 10px;">Lançamento</span>
+                <h1>BMW S1000 RR</h1>
+                <p class="price" style="font-size: 2.5rem; margin: 15px 0;">R$ 139.900,00</p>
+                
+                <p class="descricao">A superesportiva definitiva. Motor de 4 cilindros com tecnologia ShiftCam, entregando 210 cv de potência para você dominar as pistas e as ruas com precisão alemã.</p>
+
+                <div class="cep-container">
+                    <label for="cep">Calcular Frete e Prazo:</label>
+                    <div class="cep-input-group">
+                        <input type="text" id="cep" placeholder="00000-000" maxlength="9">
+                        <button id="btn-calcular-cep" class="btn-secondary">Calcular</button>
+                    </div>
+                    <div id="resultado-cep" class="resultado-cep"></div>
+                </div>
+
+                <div class="produto-acoes">
+                    <button class="btn-primary btn-comprar" id="btn-add-carrinho">
+                        <i class="material-symbols-outlined">shopping_cart</i>
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
