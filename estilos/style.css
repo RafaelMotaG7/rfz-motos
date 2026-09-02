@@ -295,7 +295,6 @@ footer {
 
 /* --- EFEITO PARALLAX --- */
 .parallax-section {
-    background-image: url('../images/moto-preta-vermelha-pexels-deitada.jpg'); /* Adicione uma imagem bonita aqui */
     min-height: 400px;
     background-attachment: fixed; /* É isso que cria o efeito parallax */
     background-position: center;
